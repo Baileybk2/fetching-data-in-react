@@ -3,9 +3,9 @@ import { useState } from "react"
 const WeatherSearch = (props) => {
   const [city, setCity] = useState("")
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // We'll call the fetch function here
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    props.fetchData(city)
     setCity("")
   }
 
@@ -18,7 +18,7 @@ const WeatherSearch = (props) => {
           id="city"
           type="text"
           value={city}
-          onChange={(e) => setCity(e.target.value)}
+          onChange={(event) => setCity(event.target.value)}
         />
         <button type="submit">Search</button>
       </form>

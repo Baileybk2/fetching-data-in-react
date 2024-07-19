@@ -6,7 +6,6 @@ const show = async (city) => {
     const queryString = `&q=${city}`
     const res = await fetch(BASE_URL + queryString)
     const data = await res.json()
-    console.log("Data:", data)
     return data
   } catch (err) {
     console.log(err)
